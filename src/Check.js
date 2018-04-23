@@ -93,6 +93,22 @@ class Check {
 
     /**
      *
+     * @return {Validator}
+     */
+    notEmpty () {
+        return this.add('exists');
+    }
+
+    /**
+     *
+     * @return {Validator}
+     */
+    boolean () {
+        return this.add('boolean');
+    }
+
+    /**
+     *
      * @param name
      * @return {Check}
      */

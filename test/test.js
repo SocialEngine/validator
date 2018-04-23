@@ -14,9 +14,19 @@ describe('SocialEngine Breeze Validator', function () {
         content2: 'long',
         content3: 'TesT',
         content4: '<script>',
+        content5: 'Test',
+        content6: true,
         contains: ['one', 'two', 'three'],
         validUsername: 'iamnatio'
     };
+
+    it('notEmpty() should return true on "content5"', function () {
+        assert(new Validator(common).where('content5').notEmpty().check());
+    });
+
+    it('boolean() should return true on "content6"', function () {
+        assert(new Validator(common).where('content6').boolean().check());
+    });
 
     it('check() unchained should return true', function () {
         const v = new Validator(common);
