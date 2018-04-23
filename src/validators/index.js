@@ -9,5 +9,6 @@ module.exports = {
     exists: require('./exists'),
     reserved: require('./reserved'),
     url: require('./url'),
-    array: require('./array')
+    array: require('./array'),
+    boolean: require('./boolean')
 };
