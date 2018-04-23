@@ -103,7 +103,7 @@ class Validator {
         let errors = {};
         let input = {};
         for (let name of Object.keys(this.checks)) {
-            const data = this.data[name] || undefined;
+            const data = this.data[name] === undefined ? undefined : this.data[name];
             if (this.exists.includes(name) && data === undefined) {
                 continue;
             }
