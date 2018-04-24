@@ -7,6 +7,12 @@ class Input {
         this.data = data;
     }
 
+    /**
+     *
+     * @param name
+     * @param value
+     * @return {Input}
+     */
     set (name, value = null) {
         if (typeof name === 'object') {
             for (let key of Object.keys(name)) {
@@ -15,6 +21,11 @@ class Input {
             return this;
         }
         this.data[name] = value;
+        return this;
+    }
+
+    del (name) {
+        delete this.data[name];
         return this;
     }
 
