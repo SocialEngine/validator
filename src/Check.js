@@ -95,6 +95,22 @@ class Check {
      *
      * @return {Validator}
      */
+    string () {
+        return this.add('string');
+    }
+
+    /**
+     *
+     * @return {Validator}
+     */
+    number () {
+        return this.add('number');
+    }
+
+    /**
+     *
+     * @return {Validator}
+     */
     notEmpty () {
         return this.add('exists');
     }
@@ -155,6 +171,11 @@ class Check {
         return this;
     }
 
+    /**
+     *
+     * @param checks
+     * @return {Input|boolean}
+     */
     check (checks = null) {
         return this.validator.check(checks);
     }

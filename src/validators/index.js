@@ -10,5 +10,7 @@ module.exports = {
     reserved: require('./reserved'),
     url: require('./url'),
     array: require('./array'),
-    boolean: require('./boolean')
+    boolean: require('./boolean'),
+    string: require('./string'),
+    number: require('./number')
 };
