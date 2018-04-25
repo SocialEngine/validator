@@ -5,7 +5,7 @@ const ValidatorException = require('./ValidatorException');
 const validators = require('./validators');
 
 class Validator {
-    constructor (data, options = {throwException: false}) {
+    constructor (data, options = {throwException: false, env: {}}) {
         /**
          * @private
          */
@@ -25,7 +25,7 @@ class Validator {
 
         /**
          * @private
-         * @type {{throwException: boolean}}
+         * @type {{throwException: boolean, env: {}}}
          */
         this.options = options;
 
@@ -111,7 +111,7 @@ class Validator {
             const checks = this.checks[name];
             for (let check of checks) {
                 const validation = validators[check.type];
-                const failed = validation(data, check.param);
+                const failed = validation.apply(this, [data, check.param]);
                 if (failed === true) {
                     if (errors[name] === undefined) {
                         errors[name] = {};

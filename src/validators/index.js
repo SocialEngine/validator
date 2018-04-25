@@ -14,5 +14,6 @@ module.exports = {
     string: require('./string'),
     number: require('./number'),
     any: require('./any'),
-    isTrue: require('./isTrue')
+    isTrue: require('./isTrue'),
+    not: require('./not')
 };

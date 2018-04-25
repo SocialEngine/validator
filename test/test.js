@@ -25,7 +25,8 @@ describe('SocialEngine Breeze Validator', function () {
         test5: true,
         test6: 'true',
         test7: false,
-        test8: undefined
+        test8: undefined,
+        test9: 'null'
     };
 
     it('number() should return true on "test1"', function () {
@@ -58,6 +59,33 @@ describe('SocialEngine Breeze Validator', function () {
 
     it('any() should return false on "test8"', function () {
         assert(!new Validator(common).where('test8').any().check());
+    });
+
+    it('not() should return false on "test9"', function () {
+        assert(!new Validator(common, {
+            env: {
+                api: true
+            }
+        }).where('test9').not('api').check());
+    });
+
+    it('not() should return true on "test9"', function () {
+        assert(new Validator(common, {
+            env: {
+                api: false
+            }
+        }).where('test9').not('api').check());
+    });
+
+    it('not() should throw exception on "test9"', function () {
+        let itThrowException = true;
+        try {
+            (new Validator(common).where('test9').not('api').check());
+            itThrowException = false;
+        } catch (e) {
+            itThrowException = true;
+        }
+        assert(itThrowException);
     });
 
     it('notEmpty() should return true on "content5"', function () {

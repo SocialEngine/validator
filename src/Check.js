@@ -141,6 +141,15 @@ class Check {
 
     /**
      *
+     * @param item
+     * @return {Validator}
+     */
+    not (item) {
+        return this.add('not', item);
+    }
+
+    /**
+     *
      * @param name
      * @return {Check}
      */
