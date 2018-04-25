@@ -12,5 +12,7 @@ module.exports = {
     array: require('./array'),
     boolean: require('./boolean'),
     string: require('./string'),
-    number: require('./number')
+    number: require('./number'),
+    any: require('./any'),
+    isTrue: require('./isTrue')
 };

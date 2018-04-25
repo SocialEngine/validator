@@ -21,7 +21,11 @@ describe('SocialEngine Breeze Validator', function () {
         test1: '1',
         test2: 100,
         test3: 200,
-        test4: '100'
+        test4: '100',
+        test5: true,
+        test6: 'true',
+        test7: false,
+        test8: undefined
     };
 
     it('number() should return true on "test1"', function () {
@@ -38,6 +42,22 @@ describe('SocialEngine Breeze Validator', function () {
 
     it('string() should return true on "test4"', function () {
         assert(new Validator(common).where('test4').string().check());
+    });
+
+    it('isTrue() should return true on "test5"', function () {
+        assert(new Validator(common).where('test5').isTrue().check());
+    });
+
+    it('isTrue() should return true on "test6"', function () {
+        assert(new Validator(common).where('test6').isTrue().check());
+    });
+
+    it('isTrue() should return false on "test7"', function () {
+        assert(!new Validator(common).where('test7').isTrue().check());
+    });
+
+    it('any() should return false on "test8"', function () {
+        assert(!new Validator(common).where('test8').any().check());
     });
 
     it('notEmpty() should return true on "content5"', function () {

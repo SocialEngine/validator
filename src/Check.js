@@ -119,6 +119,22 @@ class Check {
      *
      * @return {Validator}
      */
+    isTrue () {
+        return this.add('isTrue');
+    }
+
+    /**
+     *
+     * @return {Validator}
+     */
+    any () {
+        return this.add('any');
+    }
+
+    /**
+     *
+     * @return {Validator}
+     */
     boolean () {
         return this.add('boolean');
     }
