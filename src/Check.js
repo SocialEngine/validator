@@ -21,7 +21,7 @@ class Check {
 
     /**
      * @param contains
-     * @return {Validator}
+     * @return {Check}
      */
     contains (contains) {
         return this.add('contains', contains);
@@ -29,7 +29,7 @@ class Check {
 
     /**
      * @param min
-     * @return {Validator}
+     * @return {Check}
      */
     min (min) {
         return this.add('min', min);
@@ -37,7 +37,7 @@ class Check {
 
     /**
      * @param max
-     * @return {Validator}
+     * @return {Check}
      */
     max (max) {
         return this.add('max', max);
@@ -45,7 +45,7 @@ class Check {
 
     /**
      * @param regex
-     * @return {Validator}
+     * @return {Check}
      */
     regex (regex) {
         return this.add('regex', regex);
@@ -53,7 +53,7 @@ class Check {
 
     /**
      *
-     * @return {Validator}
+     * @return {Check}
      */
     username () {
         return this.add('username');
@@ -61,7 +61,7 @@ class Check {
 
     /**
      *
-     * @return {Validator}
+     * @return {Check}
      */
     email () {
         return this.add('email');
@@ -69,7 +69,7 @@ class Check {
 
     /**
      *
-     * @return {Validator}
+     * @return {Check}
      */
     url () {
         return this.add('url');
@@ -77,7 +77,7 @@ class Check {
 
     /**
      *
-     * @return {Validator}
+     * @return {Check}
      */
     array () {
         return this.add('array');
@@ -85,7 +85,7 @@ class Check {
 
     /**
      *
-     * @return {Validator}
+     * @return {Check}
      */
     exists () {
         return this.add('exists');
@@ -93,7 +93,7 @@ class Check {
 
     /**
      *
-     * @return {Validator}
+     * @return {Check}
      */
     string () {
         return this.add('string');
@@ -101,7 +101,7 @@ class Check {
 
     /**
      *
-     * @return {Validator}
+     * @return {Check}
      */
     number () {
         return this.add('number');
@@ -109,7 +109,7 @@ class Check {
 
     /**
      *
-     * @return {Validator}
+     * @return {Check}
      */
     notEmpty () {
         return this.add('exists');
@@ -117,7 +117,7 @@ class Check {
 
     /**
      *
-     * @return {Validator}
+     * @return {Check}
      */
     isTrue () {
         return this.add('isTrue');
@@ -125,7 +125,7 @@ class Check {
 
     /**
      *
-     * @return {Validator}
+     * @return {Check}
      */
     any () {
         return this.add('any');
@@ -133,7 +133,7 @@ class Check {
 
     /**
      *
-     * @return {Validator}
+     * @return {Check}
      */
     boolean () {
         return this.add('boolean');
@@ -142,7 +142,7 @@ class Check {
     /**
      *
      * @param item
-     * @return {Validator}
+     * @return {Check}
      */
     not (item) {
         return this.add('not', item);
@@ -170,7 +170,7 @@ class Check {
      * @private
      * @param type
      * @param param
-     * @return {Validator}
+     * @return {Check}
      */
     add (type, param = null) {
         if (this.validator.checks[this.name] === undefined) {
