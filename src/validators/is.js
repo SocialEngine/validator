@@ -8,5 +8,5 @@ module.exports = function (data, key) {
         throw new Error('Using a not() function with the env variable "' + key + '" set.');
     }
 
-    return (this.options.env[key] === true);
+    return (this.options.env[key] !== true);
 };

@@ -31,15 +31,15 @@ class Input {
 
     get (name, defaultValue = null) {
         if (typeof defaultValue === 'function') {
-            const theValue = this.data[name] || undefined;
-            if (theValue !== undefined) {
-                const response = defaultValue(theValue);
+            let response = this.data[name] || undefined;
+            if (response === undefined) {
+                response = defaultValue(response);
                 if (response !== undefined) {
                     this.set(name, response);
                 }
             }
 
-            return null;
+            return response;
         }
 
         return this.data[name] || defaultValue;

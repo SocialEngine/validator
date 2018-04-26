@@ -144,6 +144,15 @@ class Check {
      * @param item
      * @return {Check}
      */
+    is (item) {
+        return this.add('is', item);
+    }
+
+    /**
+     *
+     * @param item
+     * @return {Check}
+     */
     not (item) {
         return this.add('not', item);
     }

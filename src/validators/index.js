@@ -15,5 +15,6 @@ module.exports = {
     number: require('./number'),
     any: require('./any'),
     isTrue: require('./isTrue'),
-    not: require('./not')
+    not: require('./not'),
+    is: require('./is')
 };

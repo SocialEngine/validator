@@ -47,6 +47,15 @@ class Validator {
 
     /**
      *
+     * @param key
+     * @return {Check}
+     */
+    is (key) {
+        return new Check(this, 'is:' + key).is(key);
+    }
+
+    /**
+     *
      * @param name
      * @return {Check}
      */
