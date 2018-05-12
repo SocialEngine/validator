@@ -87,6 +87,14 @@ class Check {
      *
      * @return {Check}
      */
+    object () {
+        return this.add('object');
+    }
+
+    /**
+     *
+     * @return {Check}
+     */
     exists () {
         return this.add('exists');
     }
