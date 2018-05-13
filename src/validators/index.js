@@ -14,6 +14,7 @@ module.exports = {
     boolean: require('./boolean'),
     string: require('./string'),
     number: require('./number'),
+    withEach: require('./withEach'),
     any: require('./any'),
     isTrue: require('./isTrue'),
     not: require('./not'),

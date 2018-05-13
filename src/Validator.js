@@ -120,7 +120,14 @@ class Validator {
             const checks = this.checks[name];
             for (let check of checks) {
                 const validation = validators[check.type];
-                const failed = validation.apply(this, [data, check.param]);
+                const failed = validation.apply(this, [
+                    data,
+                    check.param,
+                    check.callback,
+                    Validator,
+                    input,
+                    name
+                ]);
                 if (failed === true) {
                     if (errors[name] === undefined) {
                         errors[name] = {};

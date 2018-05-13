@@ -53,6 +53,16 @@ class Input {
         return object;
     }
 
+    without (...params) {
+        let object = {};
+        for (let key of Object.keys(this.data)) {
+            if (!params.includes(key)) {
+                object[key] = this.data[key];
+            }
+        }
+        return object;
+    }
+
     all () {
         return this.data;
     }

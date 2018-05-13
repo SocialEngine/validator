@@ -184,12 +184,23 @@ class Check {
     }
 
     /**
+     *
+     * @param separator
+     * @param {validatorCallback} callback
+     * @return {Check}
+     */
+    withEach (separator, callback) {
+        return this.add('withEach', separator, callback);
+    }
+
+    /**
      * @private
      * @param type
      * @param param
+     * @param callback
      * @return {Check}
      */
-    add (type, param = null) {
+    add (type, param = null, callback = null) {
         if (this.validator.checks[this.name] === undefined) {
             this.validator.checks[this.name] = [];
         }
@@ -207,7 +218,8 @@ class Check {
         } else {
             this.validator.checks[this.name].push({
                 type: type,
-                param: param
+                param: param,
+                callback: callback
             });
         }
         return this;
@@ -224,3 +236,9 @@ class Check {
 }
 
 module.exports = Check;
+
+/**
+ * This callback is displayed as a global member.
+ * @callback validatorCallback
+ * @param {Validator} validator
+ */
