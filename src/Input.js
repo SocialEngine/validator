@@ -45,6 +45,15 @@ class Input {
         return this.data[name] || defaultValue;
     }
 
+    ifGet (name, callback) {
+        const response = this.data[name] || undefined;
+        if (response !== undefined) {
+            return this.set(name, callback(response));
+        }
+
+        return response;
+    }
+
     with (...params) {
         let object = {};
         for (let param of params) {
