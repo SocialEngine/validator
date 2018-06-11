@@ -112,12 +112,13 @@ class Validator {
         let errors = {};
         let input = {};
         for (let name of Object.keys(this.checks)) {
-            const data = this.data[name] === undefined ? undefined : this.data[name];
+            let data = this.data[name] === undefined ? undefined : this.data[name];
             if (this.exists.includes(name) && data === undefined) {
                 continue;
             }
 
             const checks = this.checks[name];
+            const callbacks = [];
             for (let check of checks) {
                 const validation = validators[check.type];
                 const failed = validation.apply(this, [
@@ -134,9 +135,18 @@ class Validator {
                     }
                     errors[name][check.type] = check.param;
                 }
+
+                if (typeof failed === 'function') {
+                    callbacks.push(failed);
+                }
             }
 
             if (errors[name] === undefined) {
+                if (callbacks.length) {
+                    for (let callback of callbacks) {
+                        data = callback(data);
+                    }
+                }
                 input[name] = data;
             }
         }

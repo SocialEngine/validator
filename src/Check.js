@@ -95,6 +95,14 @@ class Check {
      *
      * @return {Check}
      */
+    objectOrJSON () {
+        return this.add('objectOrJSON');
+    }
+
+    /**
+     *
+     * @return {Check}
+     */
     exists () {
         return this.add('exists');
     }

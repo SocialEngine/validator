@@ -11,6 +11,7 @@ module.exports = {
     url: require('./url'),
     array: require('./array'),
     object: require('./object'),
+    objectOrJSON: require('./objectOrJSON'),
     boolean: require('./boolean'),
     string: require('./string'),
     number: require('./number'),
