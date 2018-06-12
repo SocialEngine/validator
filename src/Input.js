@@ -45,6 +45,10 @@ class Input {
         return this.data[name] || defaultValue;
     }
 
+    exists (name) {
+        return !(this.data[name] === undefined);
+    }
+
     ifGet (name, callback) {
         const response = this.data[name] || undefined;
         if (response !== undefined) {
