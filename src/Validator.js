@@ -154,7 +154,7 @@ class Validator {
         this.errors = errors;
         if (this.hasErrors()) {
             if (this.options.throwException) {
-                throw new ValidatorException(errors);
+                throw new ValidatorException(errors, this.data);
             }
             return false;
         }

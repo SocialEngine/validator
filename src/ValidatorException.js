@@ -1,9 +1,10 @@
 
 class ValidatorException extends Error {
-    constructor (message) {
+    constructor (message, data) {
         super();
         this.message = JSON.stringify({
-            validator: message
+            validator: message,
+            validatorData: data
         });
     }
 }
