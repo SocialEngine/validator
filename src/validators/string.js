@@ -4,5 +4,9 @@ module.exports = function (data) {
         return true;
     }
 
+    if (data === null) {
+        return false;
+    }
+
     return (typeof data !== 'string');
 };
