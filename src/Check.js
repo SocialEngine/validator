@@ -3,7 +3,6 @@ const validators = require('./validators');
 class Check {
     /**
      *
-     * @memberOf breeze-validator
      * @param validator {Validator}
      * @param name
      */

@@ -4,7 +4,7 @@ const {describe, it} = require('mocha');
 const assert = require('assert');
 const Validator = require('../src/Validator');
 
-describe('SocialEngine Breeze Validator', function () {
+describe('SocialEngine Validator', function () {
     const common = {
         username: 'Bob',
         username2: 'about',
