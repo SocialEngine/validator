@@ -110,6 +110,14 @@ class Check {
      *
      * @return {Check}
      */
+    alphanumeric () {
+        return this.add('alphanumeric');
+    }
+
+    /**
+     *
+     * @return {Check}
+     */
     string () {
         return this.add('string');
     }
