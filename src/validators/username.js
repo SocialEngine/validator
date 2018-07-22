@@ -1,8 +1,8 @@
 /* eslint-disable */
 module.exports = {
-    regex: /^[a-zA-Z0-9-_]+$/,
-    min: 6,
-    max: 20,
+    // regex: /^[a-zA-Z0-9-_]+$/,
+    // min: 6,
+    // max: 20,
     reserved: [
         /**
          * @link https://gist.github.com/caseyohara/1453705
