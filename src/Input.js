@@ -31,7 +31,7 @@ class Input {
 
     get (name, defaultValue = null) {
         if (typeof defaultValue === 'function') {
-            let response = this.data[name] || undefined;
+            let response = this.data[name] === undefined ? undefined : this.data[name];
             if (response === undefined) {
                 response = defaultValue(response);
                 if (response !== undefined) {
@@ -42,7 +42,7 @@ class Input {
             return response;
         }
 
-        return this.data[name] || defaultValue;
+        return this.data[name] === undefined ? defaultValue : this.data[name];
     }
 
     exists (name) {
